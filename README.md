@@ -9,3 +9,6 @@ Pendiente de validación: ruedas y holgura con cuadro, carretera/artefactos visu
 No utilizar para entrenamientos en los que se requiera fiabilidad de potencia o resistencia real. Ejecutar primero en modo demo.
 
 Véase AUDIO_LICENCIAS_0222.txt para fuentes.
+
+## Revisión visual 02.2.2 r2 (19/11/2026)
+Se han separado los números y las etiquetas del panel derecho, corregido el desplazamiento fijo de altura y ampliado la holgura de la rueda delantera. La bici se alinea con la malla de la carretera bajo cada neumático. En Sa Calobra siguen existiendo geometrías superpuestas al inicio. El audio no se ha cambiado desde la 02.2.2.
