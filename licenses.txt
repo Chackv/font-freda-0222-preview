@@ -1,0 +1,1 @@
+Font Freda Ride Studio 02.2.1 BETA. Aplicación de pruebas. Basada en Serpentine de Chris Perkles, según la atribución existente en el proyecto original. Se deben verificar las licencias de recursos de terceros antes de redistribuciones adicionales.
