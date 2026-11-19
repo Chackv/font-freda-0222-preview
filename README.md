@@ -15,3 +15,10 @@ Se han separado los números y las etiquetas del panel derecho, corregido el des
 
 ## Revisión audio 02.2.2 r3 (19/11/2026)
 Se ha eliminado el generador sintético de clics de rueda y el pulso de cadena modulado por cadencia. Se ha corregido el punto de cierre del bucle de ruido continuo y suavizado la unión de principio y final de las grabaciones ambientales. Se mantienen los sonidos de bosque y ciudad, rodadura y viento adaptados a la velocidad. Pendiente de confirmar con escucha humana en Chrome durante ruta real o demo.
+
+## Revisión 02.2.2 r4 (19/11/2026)
+- Audio: corregido el ataque de los sonidos sintéticos de pájaros. En r3 los osciladores arrancaban inmediatamente y con ganancia 1 durante 20 ms antes de la automatización, provocando pulsos fuertes intermitentes incluso con 0 W. En r4 ambos osciladores arrancan en la misma marca temporal que la envolvente y el volumen inicial es 0. Prueba de regresión comparativa en Chrome con OfflineAudioContext: primer tramo de 20 ms pasa de RMS ~0,50 en r3 a 0 en r4; el canto posterior permanece audible.
+- Minimap: escala ahora el recorrido al ancho y alto disponibles manteniendo proporciones; trazado ligeramente más nítido. CSS del panel compactado (sin ampliar su ancho).
+- Sol: halo ambiental muy suave añadido al shader del cielo, que se oculta naturalmente cuando la geometría tapa el cielo.
+- Ruedas: radio de contacto ajustado al neumático y altura de respaldo interpolada cuando el cálculo exacto de la malla no encuentra superficie en curvas.
+- Pendiente: escucha humana completa en rutas a 0 W y revisión visual de ruedas en vista dron. No afirmar que esas pruebas ya están superadas.

@@ -1,0 +1,137 @@
+/* Font Freda 02.2.2 BETA r2 — compacidad y transparencia en escritorio.
+   Esta capa se aplica despues del CSS 02.2.1, sin modificar la beta publicada. */
+.hud{
+  --label:#e8edf0;
+}
+.hud .hud-panel,
+.hud .segment,
+.hud .coach,
+.hud .up-next,
+.hud .pacers,
+.hud .battery-warning{
+  background:rgba(13,20,26,.45)!important;
+  border-color:rgba(244,246,247,.13);
+  -webkit-backdrop-filter:blur(3px);
+  backdrop-filter:blur(3px);
+  text-shadow:0 1px 4px rgba(0,0,0,.9);
+}
+.hud .hud-power,
+.hud .ff-ride-controls{
+  box-sizing:border-box;
+}
+.hud .segment{
+  padding:calc(11 * var(--u)) calc(13 * var(--u));
+}
+.hud-map{
+  box-sizing:border-box;
+  min-width:0;
+}
+.hud-map>.hud-panel{
+  box-sizing:border-box;
+  min-width:0;
+  max-width:100%;
+}
+.hud-map .summit,
+.hud-map .summit span{
+  max-width:100%;
+  white-space:normal;
+  overflow-wrap:break-word;
+}
+.hud-map .summit{
+  font-size:calc(15 * var(--u));
+  line-height:1.25;
+}
+.hud-map .s-unit{
+  overflow-wrap:break-word;
+}
+.overlay.ready{
+  background:radial-gradient(ellipse at center, rgba(9,15,20,.25), transparent 60%)!important;
+}
+.overlay.ready .o-main{font-size:clamp(22px,3vw,42px);text-shadow:0 2px 8px #000}
+.overlay.ready .o-sub{font-size:clamp(13px,1.6vw,19px);text-shadow:0 2px 8px #000}
+@media (min-width:961px){
+  .hud-map{
+    width:min(20vw,265px);
+    max-width:265px;
+  }
+  .hud-map>.hud-panel{
+    width:100%;
+    padding:calc(11 * var(--u)) calc(13 * var(--u))!important;
+  }
+  .hud-map .minimap{
+    display:block;
+    width:100%;
+    height:clamp(92px,13vh,126px);
+  }
+  .hud-map .hud-group.climb{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:calc(10 * var(--u)) calc(12 * var(--u));
+    justify-content:start;
+  }
+  .hud-map .hud-group.climb .stat{
+    min-width:0;
+    max-width:100%;
+    align-items:flex-end;
+  }
+  .hud-map .s-val{
+    font-size:clamp(20px,2vw,28px);
+    line-height:1.05;
+  }
+  .hud-map .s-unit{
+    font-size:clamp(10px,.8vw,12px);
+    line-height:1.15;
+  }
+}
+@media (min-width:761px) and (max-width:960px){
+  .hud-map{width:min(30vw,235px)}
+  .hud-map>.hud-panel{width:100%;padding:10px!important}
+  .hud-map .minimap{width:100%;height:95px}
+  .hud-map .hud-group.climb{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .hud-map .s-val{font-size:22px}
+  .hud-map .s-unit{font-size:10px}
+}
+/* Durante los primeros segundos, el nombre de la ruta no tapa al ciclista. */
+@media (min-width:961px){
+  .hud .banner{top:calc(20 * var(--u));left:clamp(430px,29vw,540px);right:clamp(290px,23vw,410px);align-items:center;pointer-events:none}
+  .hud .banner .b-main{font-size:clamp(23px,2.6vw,40px);text-shadow:0 2px 9px #000}
+  .hud .banner .b-sub{font-size:clamp(12px,1.2vw,17px);text-shadow:0 2px 8px #000}
+  .hud-left>.segment{width:fit-content;max-width:clamp(170px,18vw,250px);min-width:0}
+}
+
+/* 02.2.2 BETA r2 – legibility fix from screenshot 14:30:35 */
+@media (min-width: 961px) {
+  .hud-map > .hud-panel { padding: 14px 15px 17px !important; }
+  .hud-map .hud-group.climb {
+    column-gap: 20px;
+    row-gap: 21px;
+    margin-top: 12px;
+    align-items: start;
+  }
+  .hud-map .hud-group.climb .stat { gap: 0; }
+  .hud-map .hud-group.climb .s-val { font-size: clamp(23px, 2vw, 30px); line-height: 1.12; }
+  .hud-map .hud-group.climb .s-unit {
+    display: block;
+    margin-top: 7px;
+    line-height: 1.35;
+    font-size: clamp(11px, .82vw, 13px);
+  }
+  .hud-map .summit { margin-top: 15px; }
+}
+
+/* 02.2.2 BETA r4: maximizar el trazado sin agrandar el panel. */
+@media (min-width: 961px) {
+  .hud-map > .hud-panel { padding: 11px 13px 13px !important; }
+  .hud-map .minimap { width: 100%; height: clamp(115px, 16vh, 155px); }
+  .hud-map .hud-group.climb {
+    column-gap: 13px;
+    row-gap: 12px;
+    margin-top: 8px;
+  }
+  .hud-map .hud-group.climb .s-unit { margin-top: 3px; line-height: 1.2; }
+  .hud-map .summit { margin-top: 10px; }
+}
+@media (min-width: 761px) and (max-width: 960px) {
+  .hud-map .minimap { width: 100%; height: 118px; }
+  .hud-map .hud-group.climb { column-gap: 10px; row-gap: 10px; margin-top: 6px; }
+  .hud-map .hud-group.climb .s-unit { margin-top: 3px; }
+}
