@@ -84,3 +84,9 @@ Las capturas son de sesiones demo, no de entrenamientos físicos. No son compara
 
 - [r4: arco inicial sobredimensionado](capturas/sa-calobra-r4.jpg)
 - [02.2.3 QA: salida sin arco que estorbe](capturas/sa-calobra-qa.jpg)
+
+## Continuación: filtrado de edificios y contacto de ruedas (19/11)
+
+Se ha abierto la rama `qa/0223-road-buildings-20261119` desde la auditoría anterior. El filtro de cercanía de edificios usa 8,1 m desde el eje exclusivamente en Sa Calobra, con comprobación del contorno; se preservan los edificios restantes. Ajustada además la base de las señales para que siga la altura del terreno. **No se ha resuelto todavía el solapamiento de asfalto del primer giro**.
+
+El análisis independiente de ruedas detecta una separación máxima de 29,6 cm en el metro 15 de Sa Calobra, y ninguna mayor de 6 cm en 33 puntos muestreados de Font Freda y Gaisberg. No se han aceptado los experimentos de recorte GPS ni de supresión de la carretera de giro. Véase el documento [Geometría de Sa Calobra](GEOMETRIA_SA_CALOBRA_02_2_3.md) y la prueba `qa/tests/test_sa_calobra_clearance.py`.

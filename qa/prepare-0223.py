@@ -26,6 +26,16 @@ changes={
   # Banner de aproximación en rutas de montaña.
   '`${t(e.leadIn)} km easy lead-in from ${e.leadInFrom}, then ${t(e.length-e.leadIn)} km and ${Math.round(e.maxEle-vv(e,e.leadIn).ele)} m up`':
   '`${t(e.leadIn)} km de aproximación desde ${e.leadInFrom} · ascenso de ${t(e.length-e.leadIn)} km · ${Math.round(e.maxEle-vv(e,e.leadIn).ele)} m de subida`',
+  # En edificios, comprobar todo el perímetro incluso si el primer vértice queda lejos.
+  'a>0&&t.nearest(c,l,120).index>=0&&yy(e.ring,t,a)':
+  'a>0&&(a>=8||t.nearest(c,l,120).index>=0)&&yy(e.ring,t,a)',
+  # Evitar OSM buildings que pisan las cunetas de Sa Calobra, sin alterar otras rutas.
+  'let y=new by(m,s,l,320,o,r+.4);':
+  'let y=new by(m,s,l,320,o,e.id===`sa-calobra`?r+5:r+.4);',
+  # Usar la altura del terreno real para postes de señalización; la cota de
+  # la calzada más baja ocultaba algunas señales bajo el terreno del arcén.
+  'y:Number.isFinite(l)?Math.min(l,e.ele[i]):e.ele[i]':
+  'y:Number.isFinite(l)?Math.max(l,e.ele[i]-.5):e.ele[i]',
   # Marca inequívoca de la QA para no confundirla con la r4 estable.
   '02.2.2 BETA r4':'02.2.3 QA',
 }
